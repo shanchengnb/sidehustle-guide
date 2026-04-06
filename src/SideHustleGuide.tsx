@@ -1830,8 +1830,8 @@ function DailyRecommendSection() {
   };
 
   useEffect(() => {
-    // 自动生成今日推荐
-    generateDaily();
+    // 不自动调用，避免 API 失败导致问题
+    setResult('点击下方按钮生成今日推荐');
   }, []);
 
   return (

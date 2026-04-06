@@ -1,5 +1,5 @@
-import type { DataSource, SOURCE_LABELS } from '../../types';
-import { SOURCE_LABELS as LABELS, SOURCE_COLORS } from '../../types';
+import type { DataSource } from '../../types';
+import { SOURCE_LABELS, SOURCE_COLORS } from '../../types';
 
 interface SourceFilterProps {
   selected: DataSource[];
@@ -48,7 +48,7 @@ export function SourceFilter({ selected, onChange }: SourceFilterProps) {
               : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
               }`}
           >
-            {LABELS[source]}
+            {SOURCE_LABELS[source]}
           </button>
         );
       })}

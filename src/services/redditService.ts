@@ -46,7 +46,7 @@ export class RedditService {
     return response.json();
   }
 
-  private transformPosts(data: any, subreddit: string): NewsItem[] {
+  private transformPosts(data: any, _subreddit: string): NewsItem[] {
     if (!data?.data?.children) return [];
 
     return data.data.children
@@ -74,7 +74,6 @@ export class RedditService {
 
   private extractTags(title: string): string[] {
     const tags: string[] = [];
-    const lowerTitle = title.toLowerCase();
 
     if (/gpt|chatgpt/i.test(title)) tags.push('GPT');
     if (/agent/i.test(title)) tags.push('Agent');

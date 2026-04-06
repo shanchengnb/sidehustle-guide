@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    },
+    {
+      "src": "api/**/*.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "WQ_API_KEY": "e6thjxhllw5rn8sikp36nj4xng7xxtbwaj29",
+    "WQ_API_ENDPOINT": "https://wanqing-api.corp.kuaishou.com/api/gateway/v1/endpoints/chat/completions",
+    "WQ_MODEL": "ep-qlw5q3-1773648874535023359"
+  }
+}
